@@ -1,2 +1,2 @@
 # RESTDB
-A simple MariaDB REST API server
+A simple REST API server base MariaDB
