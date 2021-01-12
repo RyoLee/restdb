@@ -4,7 +4,7 @@
 import pymysql
 import time
 import hashlib
-from flask import Flask, request, abort
+from flask import Flask, request, abort, Response
 from configparser import ConfigParser
 from dbutils.pooled_db import PooledDB
 
@@ -36,7 +36,7 @@ mainpw = cp.get('main', 'password')
 
 @app.route('/')
 def usage():
-    abort(403)
+    abort(Response('https://github.com/RyoLee/restdb'))
 
 
 @app.route('/ping')
