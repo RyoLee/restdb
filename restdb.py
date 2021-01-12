@@ -6,7 +6,7 @@ import time
 import hashlib
 from flask import Flask, request, abort, Response
 from configparser import ConfigParser
-from dbutils.pooled_db import PooledDB
+from DBUtils.PooledDB import PooledDB
 
 app = Flask(__name__)
 cp = ConfigParser()
