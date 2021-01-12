@@ -7,10 +7,10 @@ A simple REST API server base MariaDB
 |key|key|
 |value|value|
 |password|kv password|
-|token|md5(utc_sec/30 + admin password)|
+|token|md5(unix_timestamp_sec/30 + admin password)|
 
 ## /get
 |param|description|
 |--------|-------|
 |key|key|
-|token|md5(utc_sec/30 + kv password)|
+|token|md5(unix_timestamp_sec/30 + kv password)|
