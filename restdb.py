@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#-*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*-
 
 import pymysql
 import time
@@ -53,9 +53,9 @@ def setValue():
     pw = request.form.to_dict()["password"]
     token = request.form.to_dict()["token"]
     ts = int(time.time())
-    count = cursor.execute("select p from data where k=%s", (key))
+    count = cursor.execute("select k,p from data where k=%s", (key))
     if 1 == count:
-        p = cursor.fetchone()
+        k, p = cursor.fetchone()
         if token in getTokens(p, ts) or token in getTokens(mainpw, ts):
             cursor.execute(
                 "update data set v=%s,p=%s where k=%s", (value, pw, key))
