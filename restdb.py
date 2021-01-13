@@ -34,12 +34,12 @@ debug = ("1" == cp.get('main', 'debug'))
 mainpw = cp.get('main', 'password')
 
 
-@app.route('/')
+@app.route('/', methods=['post', 'get'])
 def usage():
     abort(Response('https://github.com/RyoLee/restdb'))
 
 
-@app.route('/ping')
+@app.route('/ping', methods=['post', 'get'])
 def ping():
     return 'pong'
 
